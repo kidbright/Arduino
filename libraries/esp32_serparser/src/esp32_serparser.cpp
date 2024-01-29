@@ -227,13 +227,13 @@ void ESP32SerParser::begin(uint32_t _baudrate) {
 	gpio_config_t io_conf;		
 
 	const uart_config_t uart_config = {
-        .baud_rate = _baudrate,
-        .data_bits = UART_DATA_8_BITS,
-        .parity = UART_PARITY_DISABLE,
-        .stop_bits = UART_STOP_BITS_1,
-        .flow_ctrl = UART_HW_FLOWCTRL_DISABLE,
-        .rx_flow_ctrl_thresh = 0,
-	    .use_ref_tick = true
+		.baud_rate = _baudrate,
+		.data_bits = UART_DATA_8_BITS,
+		.parity = UART_PARITY_DISABLE,
+		.stop_bits = UART_STOP_BITS_1,
+		.flow_ctrl = UART_HW_FLOWCTRL_DISABLE,
+//		.rx_flow_ctrl_thresh = 0,
+//		.use_ref_tick = true
     };
     // config uart
     uart_driver_install(uart_num, SERPARSER_RX_BUF_SIZE * 2, SERPARSER_TX_BUF_SIZE * 2, 0, NULL, 0);
